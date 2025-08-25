@@ -1,0 +1,17 @@
+html{
+    scroll-behavior: smooth;
+}
+ *{
+  margin: 0; 
+  padding:0;
+  box-sizing: border-box; 
+}
+body{ 
+  font-family: "Poppins", sans-serif;
+  transition: all 0.5s ease-in-out;
+  /* background-color: rgb(243, 248, 244); */
+  background-color: #070606;
+  /* color:red; */
+  color: white;
+  /* background-color: whitesmoke; */
+}
