@@ -5,11 +5,23 @@ import img2 from "../../src/assets/circle-stack.svg";
 import img3 from "../../src/assets/arrows-right-left.svg";
 import hero from "../../src/assets/bg.jpg";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";  // Importing useNavigate from react-router
 
 const HomePage = () => {
+  // HANDLE LOGIN - REDIRECT TO LOGIN PAGE
+  const navigate = useNavigate();
+    const HandleLogin = () => { 
+      navigate("/login");
+    }
+
+  // HANDLE LOGIN - REDIRECT TO SIGNUP PAGE 
+    const HandleSignup = () => {   
+      navigate("/signup");
+    }
+
   return (
     <div
-      className="
+      className=" bg-[#0a0a0a]
     home 
     grid lg:grid-cols-2 grid-cols-1 items-center
     lg:px-[6em] md:px-[3em] px-[1em]
@@ -18,7 +30,7 @@ const HomePage = () => {
       <div className="cont-1   
       my-[1rem] lg:my-[5rem] w-full lg:w-[90%]">
         <h1 className="text-[3.6rem] font-sans mt-5">Trade with Confidence</h1>
-        <p className="pr-[2rem]  w-full  lg:w-[80%] text-muted text-[.93rem]">
+        <p className="pr-[2rem]  w-full  lg:w-[80%] text-muted-foreground text-[.93rem]">
           Experience next-generation trading with our advanced platform. Access
           global markets, real-time data, and professional tools designed for
           both beginners and experts.
@@ -58,6 +70,8 @@ const HomePage = () => {
         {/* LOGIN -  GET STARTED  */}
         <div className="my-2 flex">
           <Button
+          onClick={HandleSignup}
+          // onclick={HandleLogin}
             className="
           border border-[#3d3d3dc]
           p-[1.5em] 
@@ -73,6 +87,7 @@ const HomePage = () => {
           </Button>
 
           <Button
+          onClick={HandleLogin}
             className="mx-4 
           border border-[#3d3d3d]
           p-[1.5em] 
@@ -90,6 +105,7 @@ const HomePage = () => {
         bg-fuchsia-0 my-[3rem] 
         bg-red-0
         border-t border-t-[#3d3d3d]
+        pt-5
         lg:w-[80%] sm:w-[100%]">
           <div className="detail-cont flex justify-between text-start">
             <div>

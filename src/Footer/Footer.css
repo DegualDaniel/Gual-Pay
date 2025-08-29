@@ -1,0 +1,264 @@
+
+/*  FOOTER  */
+footer {
+  height: 90vh;
+  background-color: #0a0a0a;
+  padding:  2em 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-top: 3rem;
+}
+.ft-logo{ 
+  margin-bottom: 20px;
+  width: 80%;
+}
+.ft-logo img{
+  width: 15%;
+}
+.ft-logo h1{
+  font-size: 90px;
+  color: white;
+}
+
+.ft-sec1{ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 30px;
+  width: 95%; 
+  border-top: 1px solid #3d3d3d;
+  /* background-color: red; */
+}
+.ft-cont1-1{ 
+display: flex;
+flex: 2;
+justify-content: space-evenly;
+/* background-color: yellow; */
+}
+.ft-cont2{ 
+}
+.ft-cont2 ul{
+  list-style: none; 
+}
+.ft-cont2 ul h3{ 
+  padding: 13px 0;
+}
+
+.ft-cont2 ul li{
+  margin: 13px 0;
+  font-size: 14px;
+  font-weight: 200;
+
+}
+
+/* COPYRIGHT */
+.ft-sec2{
+  /* background-color: rebeccapurple; */
+  display: flex;
+  justify-content: space-between;
+  padding:10px 30px ;
+}
+
+.ft-sec2 h3{
+  font-weight: 300;
+  font-size: 15px;
+}
+.ft-sec2 p{
+  font-size: 14px;
+  font-weight: 200;
+}
+
+
+/* SMALL DEVICES (TABLETS AND LARGE PHONES) */
+ 
+@media only screen and (max-width: 400px)  {
+
+
+
+    
+/*  FOOTER  */
+footer {
+  height: fit-content;
+  padding:  1em;
+  /* background-color: red; */
+}
+.ft-logo{ 
+  margin-bottom: 20px;
+  width: 100%;
+}
+.ft-logo img{
+  width: 20%;
+}
+.ft-logo h1{
+  font-size: 40px;
+}
+.ft-sec1{ 
+  flex-direction: column;
+  padding: 20px 3px;
+  width: 100%; 
+}
+.ft-cont1-1{ 
+display: flex;
+flex: 1;
+justify-content: space-between;
+width: 100%;
+/* background-color: yellowgreen; */
+}
+.ft-cont1 img{
+  width: 100%;
+}
+.ft-cont2 ul h3{ 
+  padding: 10px 0;
+  font-size: 15px;
+  text-align: justify;
+}
+.ft-cont2 ul li{
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: justify;
+}
+/* COPYRIGHT */
+.ft-sec2{
+  display: flex;
+  justify-content: space-between;
+  padding:10px 12px ;
+}
+.ft-sec2 h3{
+  font-weight: 350;
+  font-size: 12px;
+}
+.ft-sec2 p{
+  font-size: 12px;
+  font-weight: 400;
+}
+}
+
+
+
+/* MEDIUM SCREEN (LANDSCAPE TABLETS) */
+@media only screen and (max-width: 700px) and (min-width: 400px) {
+
+/*  FOOTER  */
+footer {
+  /*  height: 90vh; */
+    padding:  1em 3em;   
+  height: fit-content;
+  /* background-color: green;   */
+}
+.ft-logo{ 
+  margin-bottom: 20px;
+  width: 100%;
+}
+.ft-logo img{
+  width: 10%;
+}
+.ft-logo h1{
+  font-size: 45px;
+}
+.ft-sec1{ 
+  flex-direction: column;
+  padding: 30px 3px;
+  width: 100%;  
+  align-items: flex-start;
+}
+.ft-cont1-1{ 
+display: flex;
+flex: 1;
+justify-content: space-between;
+width: 90%; 
+align-items: center;
+}
+.ft-cont1 img{
+  width: 100%;
+}
+.ft-cont2 ul h3{ 
+  padding: 10px 0;
+  font-size: 17px;
+  text-align: center;
+}
+.ft-cont2 ul li{
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: justify;
+}
+/* COPYRIGHT */
+.ft-sec2{
+  display: flex;
+  justify-content: space-between;
+  padding:10px 12px ;
+}
+.ft-sec2 h3{
+  font-weight: 350;
+  font-size: 12px;
+}
+.ft-sec2 p{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+}
+
+/* LARGE SCREEN ( TABLETS) */
+@media only screen and (max-width: 1250px) and (min-width: 700px) {
+/*  FOOTER  */
+footer {
+  height: fit-content;
+  padding:  1em 3em; 
+  /* background-color: saddlebrown; */
+}
+.ft-logo{ 
+  margin-bottom: 20px;
+  width: 100%;
+}
+.ft-logo img{
+  width: 10%;
+}
+.ft-logo h1{
+  font-size: 45px;
+}
+.ft-sec1{ 
+  flex-direction: column;
+  padding: 30px 3px;
+  width: 100%;  
+  align-items: flex-start;
+}
+.ft-cont1-1{ 
+display: flex;
+flex: 1;
+justify-content: space-between;
+width: 90%; 
+align-items: center;
+}
+.ft-cont1 img{
+  width: 100%;
+}
+.ft-cont2 ul h3{ 
+  padding: 10px 0;
+  font-size: 17px;
+  text-align: center;
+}
+.ft-cont2 ul li{
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: justify;
+}
+/* COPYRIGHT */
+.ft-sec2{
+  display: flex;
+  justify-content: space-between;
+  padding:10px 12px ;
+}
+.ft-sec2 h3{
+  font-weight: 350;
+  font-size: 12px;
+}
+.ft-sec2 p{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+}

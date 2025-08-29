@@ -11,7 +11,7 @@ const NavPage = () => {
         {/* // <NavComp /> */}
         {/* // <Head /> */}
 
-
+        
         <Head />
     </div>
   )
