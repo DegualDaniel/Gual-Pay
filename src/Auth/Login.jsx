@@ -152,7 +152,7 @@ const Login = () => {
               </div>
 
               {/* Phone Number */}
-              <div className="grid gap-2">
+              {/* <div className="grid gap-2">
                 <div className="flex items-center">
                   <Label htmlFor="phone">Phone Number</Label>
                 </div>
@@ -167,7 +167,7 @@ const Login = () => {
                 {errors.phone && (
                   <p className="text-red-500 text-xs">{errors.phone}</p>
                 )}
-              </div>
+              </div> */}
 
               {/* Password */}
               <div className="grid gap-2">

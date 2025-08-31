@@ -137,7 +137,7 @@ useEffect(() => {
                 </div>
               </div>
               <div className="bg-green- 0">
-                <Button className="bg-red-500">Dashboard</Button>
+                <Button className="bg-white text-black">Dashboard</Button>
               </div>
           </div>
         </div>
