@@ -1,12 +1,16 @@
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Head.css";
 import Logo from "../../src/assets/Logo.svg";
 import Menu from "../../src/assets/menuu.svg"; 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Head = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+
 
     const handleMenuClick = (e) => {
         e.preventDefault();
@@ -21,21 +25,17 @@ const Head = () => {
             </div>
 
             <ul className={menuOpen ? "active" : ""}>
-                {/* <li><Link to="">Markets</Link></li>
-                <li><Link to="">Tools</Link></li>
-                <li><Link to="">Education</Link></li>
-                <li><Link to="">About</Link></li> */}
-
-
-                <li><a href="">Markets</a></li>
-                <li><a href="">Tools</a></li>
-                <li><a href="">Education</a></li>
-                <li><a href="">About</a></li>
- 
+                <li><Link to="/login">Markets</Link></li>
+                <li><Link to="/login">Tools</Link></li>
+                <li><Link to="/login">Education</Link></li>
+                <li><Link to="/login">About</Link></li>
             </ul>
+
+
+
             <div className="btn">
-                <button >Login</button>
-                <button>Sign Up</button>
+                <button onClick={() => navigate("/login")}>Login</button>
+                <button onClick={() => navigate("/signup")}>Sign Up</button>
 
                 {/* <Button btnName='Sign Up | Sign In' /> */}
             </div>

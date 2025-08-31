@@ -14,6 +14,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { Button } from "@/components/ui/button"
 
 export default function Page() {
   // USER DATA 
@@ -52,10 +53,11 @@ useEffect(() => {
             orientation="vertical"
             className="mr-2 data-[orientation=vertical]:h-4"
           />
-          <Breadcrumb>
+          <Breadcrumb className="bg-transparent">
             <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink className="text-white flex gap-6" href="#"> 
+              <BreadcrumbItem className="hiddenk md:block">
+                <BreadcrumbLink className=" text-white flex items-center lg:flex-row
+                lg:gap-6 gap-3" href="#"> 
                 {/* {user ? user.name || user.email || "User" : "Guest"}  */}
                   {/* {user ? `${user.name} (${user.email})` : "Guest"} */}
                     {/* {user ? `${user.email.split("@")[0]} (${user.email})` : "Guest"} */}
@@ -70,9 +72,9 @@ useEffect(() => {
 
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbSeparator className="hidden  " />
               <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                {/* <BreadcrumbPage>Data Fetching</BreadcrumbPage> */}
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -96,7 +98,8 @@ useEffect(() => {
             </div>
 
           </div>
-          <div className="bg-[#171717] p-5 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
+          <div className="bg-[#171717] 
+          p-5 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
             <div>
               <div className="line-1 my-3">
                 <div> 
@@ -118,7 +121,8 @@ useEffect(() => {
               </div>
             </div>
               {/*  */}
-              <div className="bx-2 flex gap-[4rem] bg-red-0 mt-[3rem] py-5 border-t border-t-[#3d3d3d]">
+              <div className="bx-2 grid auto-rows-min  md:grid-cols-3
+               gap-[4rem] bg-red-0 mt-[3rem] py-5 border-t border-t-[#3d3d3d]">
                 <div className="bx-sec1">
                   <h2 className="text-[1.3rem] font-semibold">Starting Balance</h2>
                   <h1 className="text-[1.7rem] font-bold">$2,000.00</h1>
@@ -131,6 +135,9 @@ useEffect(() => {
                   <h2 className="text-[1.3rem] font-semibold">Phase</h2>
                   <h1 className="text-[1.7rem] font-bold">1</h1>
                 </div>
+              </div>
+              <div className="bg-green- 0">
+                <Button className="bg-red-500">Dashboard</Button>
               </div>
           </div>
         </div>
