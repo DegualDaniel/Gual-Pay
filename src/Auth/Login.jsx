@@ -35,13 +35,12 @@ const Login = () => {
     });
   };
   const validateForm = () => {
-
     let newErrors = {};
 
     if (!formData.email.trim() && !formData.phone.trim()) {
-    newErrors.identifier = "Please enter your email or phone number";
-  }
-    if (!formData.password) { 
+      newErrors.identifier = "Please enter your email or phone number";
+    }
+    if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 8) {
       newErrors.password = "Password must be at least 8 characters";
@@ -65,77 +64,54 @@ const Login = () => {
 
   // HANDLE SUBMIT
   const handleSubmit = async (e) => {
-      console.log("🚀 handleSubmit triggered", formData); 
+    console.log("🚀 handleSubmit triggered", formData);
     e.preventDefault();
     if (validateForm()) {
       const identifier = formData.phone || formData.email;
       try {
         const response = await axios.post(
-  "https://task-79s6.onrender.com/api/login",
-  { 
-    identifier,
-    password: formData.password,
-  }
-);
+          "https://task-79s6.onrender.com/api/login",
+          {
+            identifier,
+            password: formData.password,
+          }
+        );
+        console.log(response.data.user);
+        // SAVE USER TO STORAGE
+        localStorage.setItem("user", JSON.stringify(response.data.data.user))
+        // console.log("✅ Saved user:", userData);
+//  localStorage.setItem("user", JSON.stringify(user));
+ console.log("Login response:", response.data);
+        // TOAST
+        console.log(" Form submitted:", formData);
+        toast.success("Login successfull ");
 
-        // const response = await axios.post(
-        //   "https://task-79s6.onrender.com/api/login",
-        //   { 
-        //     password: formData.password,
-        //     // phone: formData.phone,
-        //     email: formData.email,
-        //   }
-        // );
-        console.log(response.data);
-         // SAVE USER TO STORAGE
-        localStorage.setItem("user", JSON.stringify(response.data));
-
-                // TOAST
-                console.log(" Form submitted:", formData);
-                toast.success("Login successfully 🎉");
-
-
-
-
-        //  If login success
-        // if (response.data?.status === true) {
-        //   toast.success("Login successful 🎉");
-        //   localStorage.setItem("user", JSON.stringify(response.data.data)); // save user if needed
-        //   navigate("/"); // go to home page
-        // } else {
-        //   // If backend sends failure
-        //   toast.error(response.data?.message || "Login failed ❌");
-        // }
-
-        // clear form
-        setFormData({ 
-                  password: "" ,
-                  // phone: "",
-                  email: "",
-                });
+        setFormData({
+          password: "", 
+          // phone: "", 
+          email: "",
+        });
 
         setErrors({});
-        // NAVIGATE TO HOME / DASHBOARD
-        navigate("/");
-
+        // NAVIGATE TO  DASHBOARD
+        navigate("/page");
       } catch (error) {
         //  Differentiate errors
-        if (error.response)  {
-                // CATCH ERROR
-                if (error.response) {
-                   console.log("❌ Full error response:", error.response?.data);
+        if (error.response) {
+          // CATCH ERROR
+          if (error.response) {
+            console.log("❌ Full error response:", error.response?.data);
 
-                  toast.error(error.response.data?.message || "login failed ❌");
-                } else {
-                  toast.error("Network error ❌");
-                  console.log("❌ Full error response:", error.response?.data);
-
-                }
-              }
-          
-            }
+            toast.error(error.response.data?.message || "login failed ❌");
+          } else {
+            toast.error("Network error ❌");
+            console.log("❌ Full error response:", error.response?.data);
+          }
+        }
+      }
     }
   };
+  
   return (
     <div
       id="modal-backdrop"
@@ -159,8 +135,6 @@ const Login = () => {
             <div className="flex flex-col gap-6">
               {/* Email */}
               <div className="grid gap-2">
-
-
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"

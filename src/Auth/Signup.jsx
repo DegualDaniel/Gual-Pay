@@ -95,11 +95,11 @@ const Signup = () => {
         );
         console.log(response.data);
         // SAVE USER TO STORAGE
-        localStorage.setItem("user", JSON.stringify(response.data));
+        localStorage.setItem("user", JSON.stringify(response.data.data.user))
 
         // TOAST
         console.log(" Form submitted:", formData);
-        toast.success("Account created successfully 🎉");
+        toast.success("Account created successfully ");
 
         //  Clear the form after successful validation
         setFormData({
@@ -113,7 +113,7 @@ const Signup = () => {
         // Also clear errors
         setErrors({});
         // NAVIGATE TO HOME / DASHBOARD
-        navigate("/");
+        navigate("/login");
       } catch (error) {
         // CATCH ERROR
         if (error.response) {

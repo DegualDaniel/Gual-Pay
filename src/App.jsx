@@ -10,17 +10,28 @@ import LoginPage from "./Pages/LoginPage";
 import "./App.css";
 import { ToastContainer } from "react-toastify";   
 import "react-toastify/dist/ReactToastify.css";    // import toastify CSS
+import Dashboard from "./Pages/Dashboard";
+import Page from "./Pages/Page";
 const App = () => {
   const location = useLocation(); 
   // const navigate = useNavigate();
   return (
     <div>
-      {/* Always show Nav */}
-      <NavPage />
-      <HomePage />
-      <ServicePage />
-      <FooterPage />
-
+ 
+<Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <NavPage />
+              <HomePage />
+              <ServicePage />
+              <FooterPage />
+            </>
+          }
+        />
+  <Route path="/page" element={<Page />} />
+</Routes>
 
 
       {/* Conditional modals */}
